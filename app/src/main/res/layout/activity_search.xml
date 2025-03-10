@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#000080"
+        android:padding="9dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline1_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="클래식 공연 알리미"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_marginStart="4dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="공연 제목 (입력하지 않아도 돼요)"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline1_1"
+        app:layout_constraintBottom_toBottomOf="@id/guideline1_2"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline1_2"
+        app:layout_constraintBottom_toBottomOf="@id/guideline1_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="제목을 입력해주세요."
+            android:textSize="20sp"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
+            android:background="#F0F0F0"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nameConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="입력 확인"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="공연일 (20250101 형식으로 입력해주세요)"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline1_3"
+        app:layout_constraintBottom_toBottomOf="@id/guideline1_4"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+    <LinearLayout
+        android:id="@+id/editDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline1_4"
+        app:layout_constraintBottom_toBottomOf="@id/guideline1_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/etDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="공연일을 입력해주세요."
+            android:textSize="20sp"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
+            android:maxLength="8"
+            android:background="#F0F0F0"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dateConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="입력 확인"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/regionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지역 (한 곳만 선택해주세요)"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:layout_marginVertical="6dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline1_5"
+        app:layout_constraintBottom_toBottomOf="@id/guideline1_6"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/regionButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/guideline1_6"
+        app:layout_constraintBottom_toBottomOf="@id/guideline1_7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="서울"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code26"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="부산"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code27"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="대구"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code28"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="인천"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code29"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="광주"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code30"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="대전"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code31"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="울산"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code36"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="세종"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code41"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="경기"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code43"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="충북"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code44"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="충남"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code45"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="전북"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code46"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="전남"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code47"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="경북"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code48"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="경남"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code50"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="제주"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code51"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="강원"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/code00"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="전체"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+                android:layout_margin="4dp"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnReset"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="초기화"
+        android:background="@drawable/button"
+        android:backgroundTint="#000000"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline1_7"
+        app:layout_constraintBottom_toBottomOf="@id/guideline1_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline2_1"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSearch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="검색"
+        android:background="@drawable/button"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline1_7"
+        app:layout_constraintBottom_toBottomOf="@id/guideline1_8"
+        app:layout_constraintStart_toStartOf="@id/guideline2_1"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.06"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.12"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.19"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.24"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.31"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.37"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.86"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.94"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.33"
+        android:orientation="vertical"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchResults"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline1_1"
+        app:layout_constraintBottom_toTopOf="@id/guideline1_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/bottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/guideline1_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHomeview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="홈 화면"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button"
+            android:layout_marginEnd="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSearchview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="검색 화면"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button"
+            android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

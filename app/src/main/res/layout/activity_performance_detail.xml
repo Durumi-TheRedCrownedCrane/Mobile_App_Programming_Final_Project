@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivDetailPoster"
+            android:layout_width="match_parent"
+            android:layout_height="490dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:contentDescription="포스터"/>
+
+        <TextView
+            android:id="@+id/tvDetailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공연명"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/tvDetailPeriod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기간: 2024.01.01 ~ 2024.12.31"
+            android:textColor="#000000"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tvDetailPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="장소: 예술의 전당"
+            android:textColor="#000000"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tvDetailTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시간: 몰러유"
+            android:textColor="#000000"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tvDetailCast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="출연진: 김부연, 임정균, 최수영"
+            android:textColor="#000000"
+            android:padding="4dp"/>
+
+
+        <TextView
+            android:id="@+id/tvDetailRuntime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="런타임: 1시간 30분"
+            android:textColor="#000000"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tvDetailAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="관람 연령: 만 12세 이상"
+            android:textColor="#000000"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/tvDetailLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="링크: "
+            android:textColor="#000000"
+            android:padding="4dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MoAppFinal" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">#000080</item>
+        <item name="android:textColorLink">#000080</item>
+    </style>
+
+    <style name="Theme.MoAppFinal" parent="Base.Theme.MoAppFinal" />
+</resources>
