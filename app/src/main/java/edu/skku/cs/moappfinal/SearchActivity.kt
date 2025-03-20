@@ -21,7 +21,7 @@ import kotlin.coroutines.CoroutineContext
 
 class SearchActivity : AppCompatActivity(), CoroutineScope {
 
-    private val API_KEY = "35f87caec8404a1885df223a1ff86692"
+    private val API_KEY = ""
     private val GENRE = "CCCA"
 
     private lateinit var binding: ActivitySearchBinding
